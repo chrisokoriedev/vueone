@@ -7,9 +7,10 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <div id="app"><h1>{{message}}</h1>
-    
-    <button type="button" @click="clickme">check click </button>
+    <div id="app">
+      <h1>{{message}}</h1>
+      <button type="button" @click="clickMe">check click</button>
+      
     </div>
     <script>
       const app = Vue.createApp({
@@ -17,6 +18,12 @@
           return {
             message: "Christian welcome home",
           };
+        },
+        methods: {
+          clickMe() {
+            console.log("Button Clicked logged!");
+            this.message= 'Updated user name ';
+          },
         },
       });
       app.mount("#app");
